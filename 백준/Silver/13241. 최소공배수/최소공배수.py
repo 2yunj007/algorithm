@@ -1,5 +1,7 @@
 A, B = map(int, input().split())
 
+num = max(A, B)
+f = min(A, B)
 max_f = 0   # 최대공약수
 
 # 유클리드 호제법
