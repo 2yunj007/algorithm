@@ -10,7 +10,7 @@ for _ in range(K):
 max_len = sum(K_lst) // N   # 임의의 최대 랜선 길이
 lan = range(max_len+1)  # 이진 탐색을 위한 리스트
 
-start = 1
+start = 1    # 랜선의 최솟값은 1
 end = max_len
 
 # 이진 탐색
