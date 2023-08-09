@@ -2,7 +2,8 @@
 def PrimeCheck(n):
         if n == 0 or n == 1:
              return False
-        # N^(1/2)까지만 나눠서 소수 판별
+        # N의 제곱근 이하의 수까지 나눠서 소수 판별
+        # N의 제곱근을 기준으로 좌우의 연산이 대칭되는 형상을 가짐
         for i in range(2, int(n**(1/2))+1):
             if n % i == 0:
                 return False
