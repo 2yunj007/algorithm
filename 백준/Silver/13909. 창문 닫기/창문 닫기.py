@@ -1,3 +1,2 @@
-from math import sqrt
 N = int(input())
-print(int(sqrt(N)))
+print(int(N**(0.5)))
