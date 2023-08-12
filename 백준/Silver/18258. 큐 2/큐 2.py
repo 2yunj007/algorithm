@@ -11,7 +11,7 @@ for i in range(N):
         queue.append(comd[1])
     # case 2
     elif comd[0] == 'pop':
-        if len(queue) > bot:    # 큐의 길이 > bot이면 원소가 남아 있다는 것
+        if len(queue) > bot:  # 큐의 길이 > bot이면 원소가 남아 있다는 것
             print(queue[bot])
             bot += 1
         else:
@@ -19,6 +19,9 @@ for i in range(N):
     # case 3
     elif comd[0] == 'size':
         print(len(queue)-bot)
+        # queue[bot:] -> 시간 초과
+        # 슬라이싱 s[a:b] 시간 복잡도: O(b-a)
+        # len 시간 복잡도: O(1)
     # case 4
     elif comd[0] == 'empty':
         if len(queue) > bot:
