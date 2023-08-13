@@ -2,8 +2,6 @@ from collections import deque
 import sys
 
 N = int(sys.stdin.readline())
-rear = 0
-front = 0
 dq = deque()
 
 for i in range(N):
