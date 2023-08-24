@@ -24,7 +24,7 @@ T = int(input())
 for tc in range(1, T+1):
     N, M, C = map(int, input().split())     # 벌통의 크기, 벌통의 개수, 채취 최대 양
     arr = [list(map(int, input().split())) for _ in range(N)]
-    h1 = []    # 두 일꾼이 선택한 벌통 인덱스
+    h1 = []    # 두 일꾼이 선택한 벌통
     h2 = []
     rst = 0    # 두 일꾼이 꿀을 채취하여 얻을 수 있는 최대 수익
 
