@@ -9,7 +9,7 @@ def count_load(i, j, cnt):
         ni, nj = i+d[0], j+d[1]
         # 인접한 칸이 배열 범위를 벗어나지 않고, 이전에 방문한 값보다 작고, 미방문 상태라면
         # 해당 칸을 방문 표시하고 그 인접한 칸으로 넘어감
-        if 0<=ni<N and 0<=nj<N and arr[ni][nj] < arr[i][j] and not visited[ni][nj]:
+        if 0 <= ni < N and 0 <= nj < N and arr[ni][nj] < arr[i][j] and not visited[ni][nj]:
             visited[i][j] = True  # 방문 표시
             count_load(ni, nj, cnt+1)   # 인접한 칸에 대해서 다시 길을 찾음
             visited[i][j] = False # 방문 해제
