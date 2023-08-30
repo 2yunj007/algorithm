@@ -2,6 +2,7 @@ from collections import deque
 import sys
 input = sys.stdin.readline
 
+
 def bfs(n):
     visited = [-1] * 101
     q = deque()
