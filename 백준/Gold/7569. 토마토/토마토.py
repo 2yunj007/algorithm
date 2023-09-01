@@ -8,13 +8,9 @@ day = 0
 for h in range(H):
     for r in range(N):
         for c in range(M):
-            # 익은 토마토의 좌표 저장해 두기
+            # 익은 토마토 인큐
             if arr[h][r][c] == 1:
-                ripe.append((h, r, c))
-
-for h, r, c in ripe:   # bfs
-    # 익은 토마토 모두 인큐
-    queue.append((h, r, c))
+                queue.append((h, r, c))
 
 while queue:
     h, r, c = queue.popleft()
