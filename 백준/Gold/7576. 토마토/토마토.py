@@ -1,19 +1,14 @@
 from collections import deque
 M, N = map(int, input().split())    # 상자의 가로/세로 칸 수
 arr = [list(map(int, input().split())) for _ in range(N)]   # 토마토 상태
-ripe = []   # 초반의 익은 토마토 리스트
 queue = deque()
 day = 0
 
 for r in range(N):
     for c in range(M):
-        # 익은 토마토의 좌표 저장해 두기
+        # 익은 토마토 인큐
         if arr[r][c] == 1:
-            ripe.append((r, c))
-
-for r, c in ripe:   # bfs
-    # 익은 토마토 모두 인큐
-    queue.append((r, c))
+            queue.append((r, c))
 
 while queue:
     i, j = queue.popleft()
