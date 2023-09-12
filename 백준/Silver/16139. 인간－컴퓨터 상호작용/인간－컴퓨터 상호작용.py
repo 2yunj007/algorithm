@@ -1,27 +1,30 @@
 import sys
 input = sys.stdin.readline
 
-S = input()
-N = len(S)
-q = int(input())
-# 알파벳 개수를 열로 하고 문자열 길이를 행으로 하는 배열
-arr = [[0]*26 for _ in range(N)]
+S = input().strip() # 문자열
+N = len(S)  # 문자열 길이
+q = int(input())    # 질문 수
+# 각 알파벳에 해당하는 인덱스를 저장할 딕셔너리
+alpha = {
+            'a': [], 'b': [], 'c': [], 'd': [], 'e': [],
+            'f': [], 'g': [], 'h': [], 'i': [], 'j': [],
+            'k': [], 'l': [], 'm': [], 'n': [], 'o': [],
+            'p': [], 'q': [], 'r': [], 's': [], 't': [],
+            'u': [], 'v': [], 'w': [], 'x': [], 'y': [], 'z': []
+        }
 
-# i번째 문자 카운트
-for i in range(N-1):
-    n = ord(S[i]) - 97
-    arr[i][n] = 1
-
-    # 모든 알파벳에 대하여 이전 행의 카운트를 누적
-    for j in range(26):
-        arr[i][j] += arr[i-1][j]
+for i in range(N):
+    alpha[S[i]].append(i)
+# alpha = {'a': [6, 10], 'b': [], 'c': [], 'd': [], 'e': [1, 7], ...}
 
 for _ in range(q):
     a, *s = input().split()
     l, r = map(int, s)
-    n = ord(a) - 97
 
-    if l == 0:
-        print(arr[r][n])
-    else:
-        print(arr[r][n] - arr[l-1][n])
+    # 저장된 인덱스를 순회하면서 범위 안에 들어오면 카운트
+    cnt = 0
+    for i in alpha[a]:
+        if l <= i <= r:
+            cnt += 1
+
+    print(cnt)
