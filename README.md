@@ -1,1 +1,1 @@
-A record of algorithm problem solving.
+A record of algorithm problem solving
