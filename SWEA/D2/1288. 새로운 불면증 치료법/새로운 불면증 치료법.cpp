@@ -17,14 +17,14 @@ int main() {
         while (true) {
             string strNum = to_string(N * (++count));  // N*count 값을 문자열로 표현한 것  (예: 5 * 13 = 65 -> "65")
             for (char c : strNum) {
-                int num = c - '0';  // ASCII코드를 이용하여 문자열에서 정수형으로 변환
+                int num = c - '0';  // ASCII 코드를 사용하여 char에서 int로 변환
                 visited |= (1 << num);  // 각 숫자에 대해 등장했다는 의미로 bit 를 1로 변경
             }
             if (visited == total)  // 모든 숫자가 등장했다면, 종료
                 break;
         }
 
-        cout << "#" << i << " " << N * count << endl;
+        cout << "#" << i << " " << N * count << endl;   // endl: 줄 바꿈
     }
 
     return 0;
