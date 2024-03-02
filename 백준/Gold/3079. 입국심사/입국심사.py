@@ -1,9 +1,11 @@
+import sys
+input = sys.stdin.readline
+
 N, M = map(int, input().split())
 times = [int(input()) for _ in range(N)]
 answer = 0
 
-start = 1
-end = max(times) * M
+start, end = min(times) * (M // N), max(times) * M
 
 while start <= end:
     mid = (start + end) // 2
