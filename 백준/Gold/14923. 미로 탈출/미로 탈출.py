@@ -10,7 +10,7 @@ arr = [list(map(int, input().split())) for _ in range(N)]   # 0: 길, 1: 벽
 
 q = deque([(Hx - 1, Hy - 1, 0, 0)])
 visited = [[[False] * M for _ in range(N)] for _ in range(2)]
-visited[0][0][0] = 0
+visited[0][0][0] = False
 D = ((-1, 0), (1, 0), (0, -1), (0, 1))
 
 while q:
