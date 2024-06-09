@@ -1,6 +1,8 @@
 M, N = map(int, input().split())
 arr = [list(map(int, input())) for _ in range(M)]
 
+answer = 0
+
 save = [[0 for _ in range(N)] for _ in range(M)]    # 범위 내 로봇들의 출력 값 중 최댓값
 output = [[0 for _ in range(N)] for _ in range(M)]  # 저장 값 + 가중치
 
@@ -19,9 +21,6 @@ for j in range(1, N):
             save[i][j] = max(output[i + 1][j - 1], output[i][j - 1], output[i - 1][j - 1])
 
         output[i][j] = save[i][j] + arr[i][j]
-
-answer = 0
-for i in range(M):
-    answer = max(answer, max(save[i]))
+        answer = max(answer, save[i][j])
 
 print(answer)
