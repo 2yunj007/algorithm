@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 M, N = map(int, input().split())
 arr = [[1] * M for _ in range(M)]
 add = [[1] * M for _ in range(M)]
@@ -27,10 +30,14 @@ for _ in range(N):
             j += 1
 
     # 왼쪽, 왼쪽 위, 위쪽 중 자라는 정도는 무조건 위쪽 (초기 입력에서의 감소하지 않는 형태라는 조건 때문)
-    for r in range(1, M):
-        for c in range(1, M):
-            add[r][c] = add[r - 1][c]
-            arr[r][c] += add[r][c]
+    # r = 1에 대해서만 연산한 뒤 마지막에 반영
+    for c in range(1, M):
+        add[1][c] = add[1 - 1][c]
+        arr[1][c] += add[1][c]
 
-for i in range(M):
+for r in range(2, M):
+    for c in range(1, M):
+        arr[r][c] = arr[1][c]
+
+for i in range(0, M):
     print(*arr[i])
